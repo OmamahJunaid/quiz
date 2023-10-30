@@ -1,0 +1,110 @@
+body{
+    background-image: url("https://i.pinimg.com/564x/8d/c8/46/8dc8462e510dd30111c94fa7ac542324.jpg");
+    background-repeat: no-repeat;
+  background-size: cover;
+ 
+
+
+}
+#Questions {
+   background-image: url("https://clipground.com/images/student-vector-clipart-2.png");
+   background-size: 50px;
+   background-repeat: no-repeat;
+   background-position: right;
+   padding: 20px;
+     width: 20%;
+     color: white;
+    margin: auto;
+    font-size: larger;
+    font-weight: bold;
+    border: 3px solid white;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #B15EFF;
+    
+}
+/* .ans{
+    padding: 30px 10px 30px 10px;
+    width: 20%;
+    color: white;
+   margin: auto;
+   font-size: larger;
+   border: 3px solid white;
+   text-align: center;
+   border-radius: 5px;
+   background-color: #7752FE;
+   margin-top: 20px;
+
+} */
+.btn{
+  
+  text-align: center;
+  padding: 30px 10px 30px 10px;
+  width: 30%;
+ margin: auto;
+ }
+.next{
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  background-color: #B15EFF;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.time{
+  border-radius: 50px ;
+ text-align: center;
+  padding-top: 5px ;
+  padding-bottom: 4px;
+  width: 10%;
+   background-color: rgb(21, 221, 21);
+font-size:35px;
+border: 2px solid black;
+
+
+}
+input{
+  border: none;
+ color: white;
+}
+.input1{
+  padding: 10px;
+  width: 20%;
+  color: white;
+ margin: auto;
+ font-size: larger;
+ border: 3px solid white;
+ text-align: center;
+ border-radius: 5px;
+ background-color: #7752FE;
+ margin-top: 20px;
+
+}
+.input2{
+  padding: 10px;
+  width: 20%;
+  color: white;
+ margin: auto;
+ font-size: larger;
+ border: 3px solid white;
+ text-align: center;
+ border-radius: 5px;
+ background-color: #7752FE;
+ margin-top: 20px;
+
+}
+.input3{
+  padding: 10px;
+  width: 20%;
+  color: white;
+ margin: auto;
+ font-size: larger;
+ border: 3px solid white;
+ text-align: center;
+ border-radius: 5px;
+ background-color: #7752FE;
+ margin-top: 20px;
+ padding-bottom: 0;
+
+}

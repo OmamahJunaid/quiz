@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onload="nextQuestion()">
+    <div class="time">
+      <span>  <i class="fa-solid fa-stopwatch"></i></span> <span id="time"> 2:00 </span> 
+      </div>
+    <div >
+    <p id="Questions"></p>
+    <div class="ans">
+    <div class="input1"> <input onclick="clicked()" type="radio" name="option" value="1" >
+        <label id="option1"></label> <br> </div>
+   <div class="input2">    <input onclick="clicked()" type="radio" name="option" value="2" >
+    <label id="option2"></label> <br> </div>
+  <div class="input3">
+    <input onclick="clicked()" type="radio" name="option" value="3" >
+    <label id="option3"></label> <br> <br>
+  </div>
+   
+    </div>
+    <div class="btn">
+    <button class="next" onclick="nextQuestion(),reset()" disabled id="btn">Next</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/app.js"></script>
+</body>
+</html>
