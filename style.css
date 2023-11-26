@@ -23,19 +23,7 @@ body{
     background-color: #B15EFF;
     
 }
-/* .ans{
-    padding: 30px 10px 30px 10px;
-    width: 20%;
-    color: white;
-   margin: auto;
-   font-size: larger;
-   border: 3px solid white;
-   text-align: center;
-   border-radius: 5px;
-   background-color: #7752FE;
-   margin-top: 20px;
 
-} */
 .btn{
   
   text-align: center;
@@ -53,14 +41,16 @@ body{
   border-radius: 5px;
 }
 .time{
+  font-weight: bolder;
+  color: white;
   border-radius: 50px ;
  text-align: center;
   padding-top: 5px ;
   padding-bottom: 4px;
   width: 10%;
-   background-color: rgb(21, 221, 21);
+ text-shadow: 4px 4px 4px plum;
 font-size:35px;
-border: 2px solid black;
+
 
 
 }
@@ -108,3 +98,18 @@ input{
  padding-bottom: 0;
 
 }
+.heading{
+  text-align: center;
+   color: white;
+   text-shadow: 5px 5px 5px #7752FE;
+}
+.finalOutput{ 
+    background-color: white;
+    margin-top: 50px;
+    text-align: center;
+   
+
+    font-size: 100px;
+    
+}
+   

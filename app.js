@@ -1,79 +1,101 @@
-var questions = [
-    {
-        question:"HTML stands for",
-        option1:"Hyper Text markup language",
-        option2:"Hyper Link markup language",
-        option3:"Hyper Text makeup language",
-        correctAns:"Hyper Text markup language"
-    },
-    {
-        question:"CSS stands for",
-        option1:"Cascading Style sheet",
-        option2:"Cascading Styling sheet",
-        option3:"Cascading super sheet",
-        correctAns:"Cascading Style sheet"
-    },{
-        question:"In how many ways can CSS be written in?",
-        option1:"1",
-        option2:"2",
-        option3:"3",
-        correctAns:"3"
-    },{
-        question:"Which tag gives your the largest heading in html",
-        option1:"<h6>",
-        option2:"<h2>",
-        option3:"<h1>",
-        correctAns:"<h1>"
-    },{
-        question:"How many data types in js?",
-        option1:"6",
-        option2:"7",
-        option3:"8",
-        correctAns:"8"
-    }
-    ,{
-        question:"Which symbol is used for comments in JavaScript? ",
-        option1:"//",
-        option2:"||",
-        option3:"<!--",
-        correctAns:"//"
-    },
-    {
-        question:"Name the property used to specify the background color of an element in css",
-        option1:"bg-Color",
-        option2:"background-color",
-        option3:"color",
-        correctAns:"background-color"
-    },
-    {
-        question:"It removes the area around the border. It is transparent",
-        option1:"Margin",
-        option2:"Border",
-        option3:"Content",
-        correctAns:"Margin"
-    },
-    {
-        question:"Displays the alert box containing the message with ok button",
-        option1:"Alert",
-        option2:"Document.write()",
-        option3:"Console",
-        correctAns:"Alert"
-    },
-    {
-        question:"How many days in febuary",
-        option1:"29",
-        option2:"28",
-        option3:"both",
-        correctAns:"both"
-    },
+// var questions = [
+//     {
+//         question:"HTML stands for",
+//         option1:"Hyper Text markup language",
+//         option2:"Hyper Link markup language",
+//         option3:"Hyper Text makeup language",
+//         correctAns:"Hyper Text markup language"
+//     },
+//     {
+//         question:"CSS stands for",
+//         option1:"Cascading Style sheet",
+//         option2:"Cascading Styling sheet",
+//         option3:"Cascading super sheet",
+//         correctAns:"Cascading Style sheet"
+//     },{
+//         question:"In how many ways can CSS be written in?",
+//         option1:"1",
+//         option2:"2",
+//         option3:"3",
+//         correctAns:"3"
+//     },{
+//         question:"Which tag gives your the largest heading in html",
+//         option1:"<h6>",
+//         option2:"<h2>",
+//         option3:"<h1>",
+//         correctAns:"<h1>"
+//     },{
+//         question:"How many data types in js?",
+//         option1:"6",
+//         option2:"7",
+//         option3:"8",
+//         correctAns:"8"
+//     }
+//     ,{
+//         question:"Which symbol is used for comments in JavaScript? ",
+//         option1:"//",
+//         option2:"||",
+//         option3:"<!--",
+//         correctAns:"//"
+//     },
+//     {
+//         question:"Name the property used to specify the background color of an element in css",
+//         option1:"bg-Color",
+//         option2:"background-color",
+//         option3:"color",
+//         correctAns:"background-color"
+//     },
+//     {
+//         question:"It removes the area around the border. It is transparent",
+//         option1:"Margin",
+//         option2:"Border",
+//         option3:"Content",
+//         correctAns:"Margin"
+//     },
+//     {
+//         question:"Displays the alert box containing the message with ok button",
+//         option1:"Alert",
+//         option2:"Document.write()",
+//         option3:"Console",
+//         correctAns:"Alert"
+//     },
+//     {
+//         question:"How many days in febuary",
+//         option1:"29",
+//         option2:"28",
+//         option3:"both",
+//         correctAns:"both"
+//     },
     
-]
+// ]
+var firebaseConfig = {
+    apiKey: "AIzaSyBYMr3N75eDZz3tgi0o6XJ-8PrOohzi0JA",
+    authDomain: "quiz-38e16.firebaseapp.com",
+    databaseURL: "https://quiz-38e16-default-rtdb.firebaseio.com",
+    projectId: "quiz-38e16",
+    storageBucket: "quiz-38e16.appspot.com",
+    messagingSenderId: "964129519548",
+    appId: "1:964129519548:web:82bf5cc4f18e8a0e711db9"
+  };
+  
+  // Initialize Firebase
+  var app = firebase.initializeApp(firebaseConfig);
+
+
+
+ var userName = prompt("Enter your name .....")
+
+
+
+
+
     var question = document.getElementById("Questions")
     var opt1 = document.getElementById("option1")
     var opt2 = document.getElementById("option2")
     var opt3 = document.getElementById("option3")
     var btn = document.getElementById("btn")
     var time = document.getElementById("time")
+    var body = document.getElementById("body")
     var index =0
     var score =0
     var min = 1
@@ -133,17 +155,41 @@ function nextQuestion(){
     btn.disabled = true
 
 
-   if(index > questions.length - 1 && score >=7 ){
+   if(index > questions.length - 1 && score >=7 ){ 
+    body.innerHTML=` 
+    <div class="finalOutput">
+   
+    <a href="/index.html"> Take Quiz Again</a>
+
+</div>
+    `
    
     Swal.fire(
   'Good job!',
   `Your percentage is ${((score / questions.length)*100).toFixed(2)}`,
   'success'
         )
-
+    var obj={
+        name:userName,
+        score:score
+    } 
+    console.log(obj) 
+    firebase
+    .database()
+    .ref("Users")
+    .push(obj);  
    }
 
 else if (index > questions.length - 1 && score>=5){
+    body.innerHTML=`
+    <div class="finalOutput">
+   
+    <a href="/index.html"> Take Quiz Again</a>
+
+</div>
+  `
+   
+
 
      
     Swal.fire(
@@ -151,8 +197,25 @@ else if (index > questions.length - 1 && score>=5){
         `Your percentage is ${((score / questions.length)*100).toFixed(2)}`,
         'warning'
               )
+ var obj={
+                name:userName,
+                score:score
+            }      
+        console.log(obj)   
+    firebase
+    .database()
+    .ref("Users")
+    .push(obj);      
 }
-else if (index > questions.length - 1 && score>=0){
+else if (index > questions.length - 1 && score>=0){ 
+    body.innerHTML=`
+    <div class="finalOutput">
+   
+    <a href="/index.html"> Take Quiz Again</a>
+
+</div>
+    `
+   
 
      
     Swal.fire(
@@ -160,9 +223,19 @@ else if (index > questions.length - 1 && score>=0){
         `Your percentage is ${((score / questions.length)*100).toFixed(2)}`,
         'error'
               )
+
+
+              var obj={
+                name:userName,
+                score:score
+            }  
+            console.log(obj) 
+    firebase
+    .database()
+    .ref("Users")
+    .push(obj);       
+
 }
-
-
 
 
 
@@ -182,7 +255,12 @@ else{
     opt2.innerText=questions[index].option2
     opt3.innerText=questions[index].option3
     index++
-}    }
+}   
+  }
+ 
+
+
+
 
 
 
@@ -194,4 +272,3 @@ function clicked(){
 }
 
 
-console.log(score)

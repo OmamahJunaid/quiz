@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>QUIZ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+
+
+
+
 </head>
-<body onload="nextQuestion()">
+<body id="body" onload="nextQuestion()">
+   
     <div class="time">
       <span>  <i class="fa-solid fa-stopwatch"></i></span> <span id="time"> 2:00 </span> 
       </div>
     <div >
+      <h1 class="heading">QUIZ APP</h1>
     <p id="Questions"></p>
     <div class="ans">
     <div class="input1"> <input onclick="clicked()" type="radio" name="option" value="1" >
@@ -47,10 +56,8 @@
 
 
 
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/app.js"></script>
+  <script src="/questions.js"></script>
 </body>
 </html>
